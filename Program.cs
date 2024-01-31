@@ -34,8 +34,7 @@ while (true)
         Console.WriteLine("You rolled a {0} and {1} ({2} total)", 
             firstRoll, secondRoll, points);
 
-        if (points == 7 || points == 11) Console.WriteLine("You Win!");
-        else if (points == 2 || points == 3 || points == 12) Console.WriteLine("Craps!");
+        Console.WriteLine(getTotals(points));
 
         if (combos != "")
         {
@@ -64,4 +63,11 @@ static string checkCombos(long first, long second)
     }
     else return "";
 
+}
+
+static string getTotals(long points)
+{
+    if (points == 7 || points == 11) return "You Win!";
+    else if (points == 2 || points == 3 || points == 12) return "Craps!";
+    return "";
 }
